@@ -63,7 +63,6 @@ class vec3 {
 using point3 = vec3;   // 3D point
 using color = vec3;    // RGB color
 
-#endif
 
 // utility functions
 
@@ -77,7 +76,7 @@ inline vec3 operator+(const vec3 &u, const vec3 &v)
     return vec3(u.e[0] + v.e[0], u.e[1] + v.e[1], u.e[2] + v.e[2]);
 }
 
-inline vec3 operator-(const vec3 &u, vec3 &v)
+inline vec3 operator-(const vec3 &u, const vec3 &v)
 {
     return vec3(u.e[0] - v.e[0], u.e[1] - v.e[1], u.e[2] - v.e[2]);
 }
@@ -118,3 +117,4 @@ inline vec3 unit_vector(vec3 v)
 {
     return v / v.length();
 }
+#endif
