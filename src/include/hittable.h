@@ -28,11 +28,12 @@ class ShapeList : public Shape
 bool ShapeList::hit(const ray& r, double t_min, double t_max, hit_record& rec) const
 {
     hit_record temp_rec;
-    bool hit_anything;
+    bool hit_anything = false;
     double closest = t_max;
 
-    for (const Shape& object : objects)
+    for (int i=0; i<objects.size(); i++)
     {
+        shared_ptr<Shape> object = objects[i];
         if (object->hit(r, t_min, closest, temp_rec))
         {
             hit_anything = true;
