@@ -24,7 +24,7 @@ bool Sphere::hit(const ray& r, double t_min, double t_max, hit_record& rec) cons
     double c = oc.length_squared() - radius * radius;
 
     double discriminant = half_b * half_b - a * c;
-    if (discriminant < 1.0) { return false; }
+    if (discriminant < 0.0) { return false; }
     double sqrtd = sqrt(discriminant);
 
     // Find the nearest root in the acceptable range
